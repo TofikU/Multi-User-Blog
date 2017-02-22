@@ -4,8 +4,6 @@
 
 Developed a **Blog** website where users can write, edit, delete, comment their posts, leave their comments on others posts, like and dislike others posts.
 
-**[Click here to view Multi User Blog](https://blog-159421.appspot.com/)**
-
 ## Technologies used:
 - Python 2.7
 - Google App Engine with Google Cloud SDK
