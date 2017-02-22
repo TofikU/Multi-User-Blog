@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Signup{% endblock %}
+{% block content %}
+    <h2>User Registration</h2>
+    <form method="post">
+      <div class="form-group {{ user_class }}">
+        <label class="control-label" for="username">Username</label>
+            <input class="form-control" type="text" name="username"
+            id="username" value="{{ username }}"
+            aria-described-by="helpBlockUser">
+            <div id="helpBlockUser" class="help-block">{{ username_error }}</div>
+      </div>
+      <div class="form-group {{ pass_class }}">
+        <label class="control-label" for="password">Password</label>
+            <input class="form-control" type="password" name="password"
+            id="password" value="{{ password }}"
+            aria-described-by="helpBlockPass">
+            <div id="helpBlockPass" class="help-block">{{ password_error }}</div>
+      </div>
+      <div class="form-group {{ ver_class }}">
+        <label class="control-label" for="verify">Verify Password</label>
+            <input class="form-control" type="password" name="verify"
+            id="verify" value="{{ verify }}" aria-described-by="helpBlockVer">
+            <div id="helpBlockVer" class="help-block">{{ verify_error }}</div>
+      </div>
+      <div class="form-group {{ email_class }}">
+        <label class="control-label" for="email">Email</label>
+            <input class="form-control" type="email" name="email" id="email"
+            value="{{ email }}" aria-described-by="helpBlockEmail">
+            <div id="helpBlockEmail" class="help-block">{{ email_error }}</div>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+      |
+      <a href="/">Cancel</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Error{% endblock %}
+{% block head %}
+<meta http-equiv="refresh" content="5;url=/">
+{% endblock %}
+{% block content %}
+<div class="row">
+    <h1 class="col-md-12 text-center text-danger">Unauthorized Access -
+    Redirecting</h1>
+</div>
+<div class="row">
+    <h2 class="col-md-12 text-center text-danger">{{ error }}</h2>
+</div>
+{% endblock %}

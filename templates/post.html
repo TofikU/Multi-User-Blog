@@ -1,0 +1,28 @@
+<article>
+  <div class="row">
+    <div class="col-md-10">
+      <h2>{{ p.post_title }}</h2>
+    </div>
+    <div class="col-md-2 text-right post-likes">
+      Likes: {{ p.likes | length }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 text-left">
+      Posted by <strong>{{ p.created_by }}</strong> on
+      {{ p.post_created.strftime("%b %d, %Y") }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        {{ p._render_text | safe }}
+      </p>
+    </div>
+  </div>
+</article>

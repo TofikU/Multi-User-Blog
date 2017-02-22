@@ -1,0 +1,25 @@
+.username {
+    margin-top: 28px;
+}
+.mod-post {
+    margin-top: 17px;
+}
+
+.post-likes {
+    font-size: 30px;
+    margin-top: 17px;
+}
+
+.comment-likes {
+    font-size: 18px;
+    margin-top: 7px;
+}
+
+a.comments {
+    color: black;
+    text-decoration: none;
+}
+
+.delete {
+    margin-top: 5px;
+}

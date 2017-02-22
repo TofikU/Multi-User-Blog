@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Post{% endblock %}
+{% block content %}
+  {{ p.render_post() | safe }}
+  {% include "post_options.html" %}
+  <a class="comments" name="comments"><h3>Comments</h3></a>
+  <form class="form-horizontal" method="post"
+  action="/{{ p.key.id() }}/add_comment">
+    <div class="form-group">
+      <label for="comment_title" class="col-md-1 control-label">Title</label>
+      <div class="col-md-10">
+        <input class="form-control" type="text" name="comment_title"
+        id="comment_title" value="{{ comment_title }}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="comment_text" class="col-md-1 control-label">Content</label>
+      <div class="col-md-10">
+        <textarea class="form-control" name="comment_text" id="comment_text">
+        {{ post_text }}
+        </textarea>
+      </div>
+    </div>
+    <div class="help-block error-text">{{ error }}</div>
+    <div class="form-group">
+      <div class="col-sm-offset-1 col-sm-11">
+        <button type="submit" class="btn btn-default">Add Comment</button>
+        |
+        <a href="/">Cancel</a>
+      </div>
+  </div>
+  </form>
+  {% for c in comments %}
+      {{ c.render_comments() | safe }}
+      {% include "comment_options.html" %}
+  {% endfor %}
+{% endblock %}

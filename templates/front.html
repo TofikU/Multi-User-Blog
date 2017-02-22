@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+  {% for p in posts %}
+    {{ p.render_post() | safe }}
+    {% include "post_options.html" %}
+  {% endfor %}
+
+{% endblock %}

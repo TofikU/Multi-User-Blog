@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}New comment{% endblock %}
+{% block content %}
+<h2>Add a comment</h2>
+<form method="post" action="/{{ post_id }}/add_comment">
+  <div class="form-group {{ title_class }}">
+    <label class="control-label" for="comment_title">Title</label>
+    <input class="form-control" type="text" name="comment_title"
+    id="comment_title" value="{{ comment_title }}"
+    aria-described-by="helpBlockTitle">
+    <div id="helpBlockTitle" class="help-block">{{ title_error }}</div>
+  </div>
+  <div class="form-group {{ text_class }}">
+    <label class="control-label"  for="comment_text">Content</label>
+    <textarea class="form-control" name="comment_text" id="comment_text"
+    aria-described-by="helpBlockTitle">{{ comment_text }}</textarea>
+    <div id="helpBlockText" class="help-block">{{ text_error }}</div>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+  <a class="btn btn-default" href="/{{ post_id }}" role="button">Cancel</a>
+</form>
+{% endblock %}

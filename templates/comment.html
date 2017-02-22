@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10">
+        <h4>{{ c.comment_title }}</h4>
+    </div>
+    <div class="col-md-2 text-right comment-likes">
+          Likes: {{ c.likes | length }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        Posted by <strong>{{ c.username }}</strong> on
+        {{ c.comment_date.strftime("%b %d, %Y") }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>{{ c._render_text | safe }}</p>
+    </div>
+</div>

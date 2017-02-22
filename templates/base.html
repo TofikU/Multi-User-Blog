@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %} - MyBlog</title>
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-6">My Blog</h1>
+            <div class="col-md-6">
+                <p class="username text-right">
+                    {% if user %}
+                        Welcome, {{ user.name }}
+                        (<a class="login-link" href="/logout">Logout</a>)
+                    {% else %}
+                        <a class="login-link" href="/login">Login</a>
+                        |
+                        <a class="login-link" href="/signup">Signup</a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/new_post">Add new Post</a></li>
+        </ul>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

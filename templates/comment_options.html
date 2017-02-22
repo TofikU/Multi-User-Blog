@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-1">
+      <a class="btn btn-default" href="/{{ p.key.id() }}#comments">Comments</a>
+  </div>
+  {% if user.name == c.username %}
+  <div class="col-md-3">
+    <a class="btn btn-default"
+    href="/{{ p.key.id() }}/{{ c.key.id() }}/edit">Edit</a>
+  </div>
+  {% else %}
+  <div class="col-md-3 text-left">
+    {% if user.name in c.likes and user.name != c.username %}
+    <form method="post" action="/{{ p.key.id() }}/{{ c.key.id() }}/unlike">
+      <button type="submit" class="btn btn-default">Unlike</button>
+    </form>
+    {% else %}
+    <form method="post" action="/{{ p.key.id() }}/{{ c.key.id() }}/like">
+      <button type="submit" class="btn btn-default">Like</button>
+    </form>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
