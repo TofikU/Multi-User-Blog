@@ -23,4 +23,4 @@ Developed a **Blog** website where users can write, edit, delete, comment their 
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017 Tofik Umukhanov
+Copyright (c) 2017
